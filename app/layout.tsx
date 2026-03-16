@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import OfferPopup from "./OfferPopup";
 
 export const metadata: Metadata = {
-  title: "ptctravels.in | Premium Travel & Motor Insurance Partner",
-  description: "ptctravels.in offers reliable flight, train, and cab bookings along with instant third-party motor insurance generation.",
+  metadataBase: new URL('https://ptctravels.in'),
+  title: "Best Travel Agency & Taxi Service in Saharanpur | Parvati Trading Co",
+  description: "Parvati Trading Co is the best travel agency in Saharanpur. We offer reliable flight & train bookings, top-rated taxi service in Saharanpur, and instant motor insurance.",
+  keywords: ["best travel agency in saharanpur", "taxi service in saharanpur", "cab service in saharanpur", "flight booking saharanpur", "train booking saharanpur", "motor insurance saharanpur", "Parvati Trading Co", "tour and travels saharanpur"],
+  authors: [{ name: "Parvati Trading Co" }],
+  openGraph: {
+    title: "Best Travel Agency & Taxi Service in Saharanpur | ptctravels.in",
+    description: "Book flights, trains, premium cabs, and motor insurance with Saharanpur's most trusted travel agency.",
+    url: "https://ptctravels.in",
+    siteName: "Parvati Trading Co",
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://ptctravels.in",
+  }
 };
 
 export const viewport = {
@@ -38,18 +51,18 @@ export default function RootLayout({
           </div>
         </div>
 
-        <nav className="glass" style={{ position: 'sticky', top: 0, zIndex: 100, padding: '1.25rem 0', boxShadow: 'var(--shadow-sm)' }}>
-          <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-            <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <img src="/logo_icon.png" alt="Parvati Trading Co" style={{ width: '45px', height: '45px', borderRadius: '10px', objectFit: 'cover' }} />
-              <span style={{ fontSize: '1.5rem', fontWeight: 800, fontFamily: 'Outfit', color: 'var(--primary)' }}>Parvati Trading Co</span>
+        <nav className="glass main-nav">
+          <div className="container nav-container">
+            <a href="/" className="logo-link">
+              <img src="/logo_icon.png" alt="Parvati Trading Co" className="logo-img" />
+              <span className="logo-text">Parvati Trading Co</span>
             </a>
-            <div className="nav-links" style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-              <a href="/" style={{ fontWeight: 600, color: 'var(--primary-light)' }}>Home</a>
-              <a href="/about" style={{ fontWeight: 600, color: 'var(--primary-light)' }}>About</a>
-              <a href="/services" style={{ fontWeight: 600, color: 'var(--primary-light)' }}>Services</a>
-              <a href="/contact" style={{ fontWeight: 600, color: 'var(--primary-light)' }}>Contact</a>
-              <a href="/booking" className="btn btn-primary" style={{ padding: '0.6rem 1.25rem', backgroundColor: 'var(--secondary)' }}>Book Now</a>
+            <div className="nav-links">
+              <a href="/">Home</a>
+              <a href="/about">About</a>
+              <a href="/services">Services</a>
+              <a href="/contact">Contact</a>
+              <a href="/booking" className="btn btn-primary book-btn">Book Now</a>
             </div>
           </div>
         </nav>
@@ -103,8 +116,6 @@ export default function RootLayout({
         <a href="https://wa.me/919105352519" className="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
           <i className="fab fa-whatsapp"></i>
         </a>
-
-        <OfferPopup />
       </body>
     </html >
   );

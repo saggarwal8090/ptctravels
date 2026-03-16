@@ -385,3 +385,126 @@ button {
     transform: translateY(0) scale(1);
   }
 }
+
+/* --- Responsive & Navigation Styles --- */
+
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1.25rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: var(--primary-light);
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+.nav-links .book-btn {
+  padding: 0.6rem 1.25rem;
+  background-color: var(--secondary);
+  color: white;
+  border-radius: var(--radius);
+}
+
+.nav-links .book-btn:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* Media Queries for Phones and Tablets */
+@media (max-width: 768px) {
+  .nav-container {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    gap: 1.25rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+  
+  .hero-slider + div > .container {
+    text-align: center;
+  }
+  
+  .glass {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  .glass .btn {
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  footer .grid-4 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+  
+  footer .grid-4 p, footer .grid-4 ul li {
+    justify-content: center;
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
